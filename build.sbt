@@ -6,6 +6,8 @@ version := "0.4-SNAPSHOT"
 
 scalaVersion := "2.11.7"
 
+crossScalaVersions := Seq("2.12.3")
+
 resolvers += Resolver.sonatypeRepo("snapshots")
 
 libraryDependencies <+= scalaVersion("org.scala-lang" % "scala-compiler" % _)
@@ -13,7 +15,7 @@ libraryDependencies <+= scalaVersion("org.scala-lang" % "scala-compiler" % _)
 libraryDependencies <+= scalaVersion("org.scala-lang" % "scala-reflect" % _)
 
 libraryDependencies ++= Seq(
-  "org.scala-js" %% "scalajs-library" % "0.6.5" % "test",
+  "org.scala-js" %% "scalajs-library" % "0.6.19" % "test",
   "junit" % "junit" % "4.12" % "test",
   "com.novocode" % "junit-interface" % "0.11" % "test"
 )
@@ -31,8 +33,8 @@ javaOptions += "-Xmx4G"
 scalacOptions ++= Seq(
   "-encoding", "UTF-8",
   "-deprecation", "-feature", "-unchecked",
-  "-optimise", "-Yclosure-elim", "-Yinline",
-  "-YclasspathImpl:flat",
+  // "-optimise", "-Yclosure-elim", "-Yinline",
+  // "-YclasspathImpl:flat",
   "-Xlog-free-types"
 )
 
